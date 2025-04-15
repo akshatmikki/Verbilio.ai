@@ -76,19 +76,14 @@ export default function Home() {
       <main>
         <div className="max-w-7xl mx-auto px-4 pt-[150px]">
           {/* Hero Section */}
-          <motion.div
-            className="text-center mb-20"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-20">
             <h1 className="text-6xl font-bold tracking-tight text-white mb-6">
               Join the Future of Automation
             </h1>
             <p className="text-xl text-white max-w-3xl mx-auto">
               Be among the first to experience our revolutionary platform for AI-powered workflows, marketplace for MCP servers, AI agents, and workflow templates.
             </p>
-          </motion.div>
+          </div>
 
           {/* Main Content Grid */}
           <div className="grid lg:grid-cols-[1fr,420px] gap-16 items-start">
