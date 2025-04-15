@@ -16,6 +16,25 @@ import {
 import { Boxes, Server, Bot, FileText } from "lucide-react";
 import { X, Instagram, Facebook } from 'lucide-react';
 import ContactForm from '@/components/contact-form';
+import PerkCard from '@/components/perk-card';
+
+const perks = [
+  {
+    icon: '🚀',
+    title: 'Priority Access',
+    text: 'June 2025',
+  },
+  {
+    icon: '🎁',
+    title: 'Exclusive Discount',
+    text: '30% Off',
+  },
+  {
+    icon: '🛡️',
+    title: 'Exclusive Badge',
+    text: "Founder's Wall",
+  },
+];
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -171,35 +190,8 @@ export default function Home() {
 
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 text-white">
-              {[
-                {
-                  icon: '🚀',
-                  title: 'Priority Access',
-                  text: 'June 2025',
-                },
-                {
-                  icon: '🎁',
-                  title: 'Exclusive Discount',
-                  text: '30% Off',
-                },
-                {
-                  icon: '🛡️',
-                  title: 'Exclusive Badge',
-                  text: "Founder's Wall",
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: i * 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="text-blue-400 text-3xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-xl text-white font-medium">{item.text}</p>
-                </motion.div>
+              {perks.map((item, i) => (
+                <PerkCard key={i} item={item} i={i} />
               ))}
             </div>
           </div>
