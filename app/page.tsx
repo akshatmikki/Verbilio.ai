@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import CountdownTimer from '@/components/countdown-timer';
 import WaitlistForm from '@/components/waitlist-form';
 import { toast } from 'sonner';
-import { Star, ArrowRight } from 'lucide-react';
+import { Star, ArrowRight, Contact } from 'lucide-react';
 import Image from 'next/image';
 import {
   Accordion,
@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/accordion";
 import { Boxes, Server, Bot, FileText } from "lucide-react";
 import { X, Instagram, Facebook } from 'lucide-react';
+import ContactForm from '@/components/contact-form';
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -50,17 +51,10 @@ export default function Home() {
             <div className="flex items-center">
               <span className="text-xl font-bold">Verbilio.ai</span>
             </div>
-            <div className="flex items-center gap-4">
-              <a href="#" className="text-sm text-gray-300 hover:text-white">Early Benefits</a>
-              <a href="#" className="text-sm text-gray-300 hover:text-white">Follow My Journey</a>
-              <a href="#" className="text-sm text-gray-300 hover:text-white">Early Reviews</a>
-              <a href="#" className="text-sm text-gray-300 hover:text-white">FAQ's</a>
-              <Button>Get Template</Button>
-            </div>
           </div>
         </div>
       </nav>
-    {/* Hero Section */}
+      {/* Hero Section */}
       <main>
         <div className="max-w-7xl mx-auto px-4 pt-[150px]">
           {/* Hero Section */}
@@ -136,35 +130,27 @@ export default function Home() {
             </div>
 
             {/* Waitlist Form */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <p className="text-sm text-purple-400 text-center uppercase mb-2">Launches: May 5, 2025</p>
-              <h1 className="text-2xl md:text-4xl font-bold text-center mb-4 text-black">
+            <div className="rounded-2xl p-8 shadow-[0_0_30px_rgba(128,128,128,0.4)]">
+              <p className="text-sm text-purple-400 text-center uppercase mb-2">Launches: June 15, 2025</p>
+              <h1 className="text-2xl md:text-4xl font-bold text-center mb-4 text-white">
                 Join the <span className="text-blue-400">waitlist</span>
               </h1>
-              <p className="text-center text-gray-600 max-w-md">
+              <p className="text-center text-gray-400 max-w-md">
                 Obtain early access to our program and remain informed about release announcements.
               </p>
               <CountdownTimer />
               <WaitlistForm />
-
-              <div className="flex items-center justify-center gap-2 py-4 text-sm text-gray-400">
-                <div className="flex -space-x-2">
-                  {[...Array(4)].map((_, i) => (
-                    <div key={i} className="h-8 w-8 rounded-full bg-gray-800 border-2 border-black" />
-                  ))}
-                </div>
-                Join <span className="font-semibold">10,000+</span> others on the waitlist
-              </div>
-              <div className="flex justify-center gap-6 text-gray-400 text-lg mt-2">
-                <X className="cursor-pointer hover:text-black" />
-                <Instagram className="cursor-pointer hover:text-black" />
-                <Facebook className="cursor-pointer hover:text-black" />
+              <div className="flex justify-center gap-6 text-gray-400 text-lg mt-5">
+                <X className="cursor-pointer hover:text-white" />
+                <Instagram className="cursor-pointer hover:text-white" />
+                <Facebook className="cursor-pointer hover:text-white" />
               </div>
             </div>
+
           </div>
         </div>
       </main>
-      
+
       {/* Benefits Section */}
       <div className="min-h-screen bg-black text-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-32">
@@ -185,7 +171,7 @@ export default function Home() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg">
                 <div className="text-blue-400 text-3xl mb-4">🚀</div>
                 <h3 className="text-xl font-semibold mb-2">Priority Access</h3>
-                <p className="text-xl text-white font-medium">March 2025</p>
+                <p className="text-xl text-white font-medium">June 2025</p>
               </div>
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg">
                 <div className="text-blue-400 text-3xl mb-4">🎁</div>
@@ -204,36 +190,40 @@ export default function Home() {
 
       {/* Journey Section */}
       <div className="py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <p className="text-blue-400 text-sm font-semibold mb-4">Sharing My Journey</p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Follow My Journey of building a<br />
-              <span className="text-gray-400">startup & travelling world</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="relative aspect-[4/3] w-full">
-              <Image
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                alt="Journey"
-                fill
-                className="rounded-2xl object-cover"
-              />
-            </div>
-            <div className="relative aspect-[4/3] w-full">
-              <Image
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                alt="Journey"
-                fill
-                className="rounded-2xl object-cover"
-              />
-            </div>
-          </div>
-        </div>
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="mx-auto max-w-2xl lg:text-center mb-16">
+      <p className="text-blue-400 text-sm font-semibold mb-4">Sharing our Journey</p>
+      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        Follow our Journey of building a<br />
+        <span className="text-gray-400">startup & innovation</span>
+      </h2>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Left image - tilt inward (counter-clockwise) */}
+      <div className="relative aspect-[4/3] w-full transform -rotate-3 rounded-2xl overflow-hidden shadow-xl">
+        <Image
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+          alt="Journey"
+          fill
+          className="object-cover"
+        />
       </div>
 
-      {/* Testimonials */}
+      {/* Right image - tilt inward (clockwise) */}
+      <div className="relative aspect-[4/3] w-full transform rotate-3 rounded-2xl overflow-hidden shadow-xl">
+        <Image
+          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+          alt="Journey"
+          fill
+          className="object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+      {/* Testimonials 
       <div className="py-24 bg-black/50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center mb-16">
@@ -283,7 +273,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+        */}
       {/* FAQ Section */}
       <div className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -299,17 +289,47 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <Accordion type="single" collapsible className="space-y-4">
               {[
-                "What is a waitlist template?",
-                "Can I customize the waitlist template?",
-                "Does it integrate with email marketing tools?",
-                "Is the template mobile-friendly?",
-                "How do I access the template after purchase?"
-              ].map((question, i) => (
+                {
+                  question: "What is this waitlist for?",
+                  answer:
+                    "This waitlist gives you early access to our upcoming AI-powered automation and workflow platform — designed to help you build, run, and monetize intelligent apps, agents, and workflows using pre-built templates or custom logic. You’ll be the first to explore our Workflow Templates Marketplace and cutting-edge features that empower creators, teams, and businesses to automate anything."
+                },
+                {
+                  question: "What benefits will I get if I join this waitlist?",
+                  answer: (
+                    <div>
+                      <p className="mb-4">By joining the waitlist, you’ll get:</p>
+                      <ul className="list-disc list-inside space-y-2 text-gray-400">
+                        <li><b>Early access</b> to our beta platform before public release</li>
+                        <li><b>Exclusive perks</b> like free credits, premium templates, or partner tools</li>
+                        <li><b>Influence over development</b> by providing feedback and requesting features</li>
+                        <li><b>First-mover advantage</b> in showcasing and selling your own templates or agents on our marketplace</li>
+                        <li><b>Exclusive Founder's wall badge</b></li>
+                        <li><b>30% discount on launch</b></li>
+                      </ul>
+                    </div>
+                  )
+                },
+                {
+                  question: "Who should join this waitlist?",
+                  answer: (
+                    <div>
+                      <p className="mb-4">This is for:</p>
+                      <ul className="list-disc list-inside space-y-2 text-gray-400">
+                        <li><b>Developers</b> building AI-driven apps, bots, or automations</li>
+                        <li><b>Productivity enthusiasts</b> and <b>no-code creators</b> looking to streamline workflows</li>
+                        <li><b>Startups and teams</b> aiming to scale faster with intelligent automations</li>
+                        <li><b>Agencies and consultants</b> wanting to offer workflow solutions to clients</li>
+                      </ul>
+                      <p className="mt-4">If you’re excited about building, using, or monetizing AI-powered automation tools — this is for you.</p>
+                    </div>
+                  )
+                }
+              ].map((item, i) => (
                 <AccordionItem key={i} value={`item-${i}`} className="border border-white/10 rounded-lg px-6">
-                  <AccordionTrigger className="text-left">{question}</AccordionTrigger>
+                  <AccordionTrigger className="text-left">{item.question}</AccordionTrigger>
                   <AccordionContent className="text-gray-400">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-                    voluptates corporis error non distinctio magni.
+                    {typeof item.answer === 'string' ? <p>{item.answer}</p> : item.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -317,37 +337,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* Contact Section */}
-      <div className="py-24 bg-black/50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl bg-white/5 rounded-2xl p-8">
-            <div className="flex justify-between items-center">
-              <div>
-                <h2 className="text-2xl font-bold mb-2">Have Questions?</h2>
-                <p className="text-gray-400">
-                  Should you require further information about our product, its features, or its
-                  pricing structure, don't hesitate to get in touch with us.
-                </p>
-              </div>
-              <Button variant="secondary" className="flex items-center gap-2">
-                Mail Us <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <ContactForm />
       {/* Footer */}
       <footer className="py-12 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            <p className="text-gray-400">© 2024 — Copyright</p>
-            <div className="flex gap-8">
-              <a href="#" className="text-gray-400 hover:text-white">Instagram</a>
-              <a href="#" className="text-gray-400 hover:text-white">Twitter/ X</a>
-              <a href="#" className="text-gray-400 hover:text-white">Facebook</a>
-            </div>
+            <p className="text-gray-400">© 2025 — Copyright</p>
           </div>
         </div>
       </footer>

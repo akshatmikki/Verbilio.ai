@@ -17,7 +17,7 @@ const CountdownTimer: React.FC = () => {
   });
 
   useEffect(() => {
-    const countdownDate = new Date('2025-05-05T00:00:00').getTime();
+    const countdownDate = new Date('2025-06-15T00:00:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -35,7 +35,7 @@ const CountdownTimer: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex gap-4 justify-center text-black text-center mt-4">
+    <div className="flex gap-4 justify-center text-white text-center mt-4">
       {(['days', 'hours', 'minutes', 'seconds'] as const).map((unit) => (
         <div key={unit}>
           <div className="text-3xl font-bold">{timeLeft[unit]}</div>

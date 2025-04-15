@@ -1,0 +1,8 @@
+# robots.txt for your site
+
+User-agent: *
+Disallow: /admin/
+Disallow: /dashboard/
+Allow: /
+
+Sitemap: https://verbilioai.netlify.app/sitemap.xml
