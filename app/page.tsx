@@ -5,9 +5,8 @@ import { supabase } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
 import CountdownTimer from '@/components/countdown-timer';
 import WaitlistForm from '@/components/waitlist-form';
-import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
-import { Timer, Star, ChevronDown, ArrowRight } from 'lucide-react';
+import { Star, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import {
   Accordion,
@@ -15,6 +14,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Boxes, Server, Bot, FileText } from "lucide-react";
+import { X, Instagram, Facebook } from 'lucide-react';
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -47,7 +48,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex items-center">
-              <span className="text-xl font-bold">WaitlIZ</span>
+              <span className="text-xl font-bold">Verbilio.ai</span>
             </div>
             <div className="flex items-center gap-4">
               <a href="#" className="text-sm text-gray-300 hover:text-white">Early Benefits</a>
@@ -59,57 +60,142 @@ export default function Home() {
           </div>
         </div>
       </nav>
-
-      {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center text-white px-4 pt-[200px]">
-        <p className="text-sm text-purple-400 uppercase mb-2">Launches: May 5, 2025</p>
-        <h1 className="text-4xl md:text-6xl font-bold text-center mb-4">
-          Join the <span className="text-blue-400">waitlist</span>
-        </h1>
-        <p className="text-center text-gray-400 max-w-md">
-          Obtain early access to our program and remain informed about release announcements.
-        </p>
-        <CountdownTimer />
-        <WaitlistForm />
-
-            <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
-              <div className="flex -space-x-2">
-                {[...Array(4)].map((_, i) => (
-                  <div key={i} className="h-8 w-8 rounded-full bg-gray-800 border-2 border-black"/>
-                ))}
-              </div>
-              Join <span className="font-semibold">10,000+</span> others on the waitlist
-            </div>
+    {/* Hero Section */}
+      <main>
+        <div className="max-w-7xl mx-auto px-4 pt-[150px]">
+          {/* Hero Section */}
+          <div className="text-center mb-20">
+            <h1 className="text-6xl font-bold tracking-tight text-white mb-6">
+              Join the Future of Automation
+            </h1>
+            <p className="text-xl text-white max-w-3xl mx-auto">
+              Be among the first to experience our revolutionary platform for AI-powered workflows,
+              marketplace for MCP servers, AI agents, and workflow templates.
+            </p>
           </div>
 
+          {/* Main Content Grid */}
+          <div className="grid lg:grid-cols-[1fr,420px] gap-16 items-start">
+            {/* Features List */}
+            <div className="space-y-12">
+              <div className="flex gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <Boxes className="h-6 w-6 text-indigo-600" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">AI-Powered Workflows</h3>
+                  <p className="text-white text-lg">
+                    Automate complex processes with intelligent workflows that adapt and learn.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <Server className="h-6 w-6 text-indigo-600" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">MCP Servers Marketplace</h3>
+                  <p className="text-white text-lg">
+                    Access a curated collection of Modular Compute Platform servers.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <Bot className="h-6 w-6 text-indigo-600" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">AI Agents</h3>
+                  <p className="text-white text-lg">
+                    Deploy intelligent agents that handle tasks autonomously.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <FileText className="h-6 w-6 text-indigo-600" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Template Marketplace</h3>
+                  <p className="text-white text-lg">
+                    Jump-start your automation with pre-built workflow templates.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Waitlist Form */}
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <p className="text-sm text-purple-400 text-center uppercase mb-2">Launches: May 5, 2025</p>
+              <h1 className="text-2xl md:text-4xl font-bold text-center mb-4 text-black">
+                Join the <span className="text-blue-400">waitlist</span>
+              </h1>
+              <p className="text-center text-gray-600 max-w-md">
+                Obtain early access to our program and remain informed about release announcements.
+              </p>
+              <CountdownTimer />
+              <WaitlistForm />
+
+              <div className="flex items-center justify-center gap-2 py-4 text-sm text-gray-400">
+                <div className="flex -space-x-2">
+                  {[...Array(4)].map((_, i) => (
+                    <div key={i} className="h-8 w-8 rounded-full bg-gray-800 border-2 border-black" />
+                  ))}
+                </div>
+                Join <span className="font-semibold">10,000+</span> others on the waitlist
+              </div>
+              <div className="flex justify-center gap-6 text-gray-400 text-lg mt-2">
+                <X className="cursor-pointer hover:text-black" />
+                <Instagram className="cursor-pointer hover:text-black" />
+                <Facebook className="cursor-pointer hover:text-black" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      
       {/* Benefits Section */}
-      <div className="py-24 bg-black/50">
+      <div className="min-h-screen bg-black text-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-32">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <p className="text-blue-400 text-sm font-semibold mb-4">Perks as a waitlist member</p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-blue-400 text-sm font-semibold mb-4 flex items-center justify-center">
+              <span className="mr-2">👤</span> Perks as a waitlist member
+            </p>
+            <h2 className="text-5xl font-bold tracking-tight sm:text-6xl mb-4">
               Get Early bird Benefits
             </h2>
-            <p className="text-gray-400">
+            <p className="text-gray-400 text-lg">
               Obtain early access to our program and remain informed.
             </p>
           </div>
+
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-              <div className="bg-white/5 rounded-2xl p-8">
-                <Timer className="h-8 w-8 text-blue-400 mb-4"/>
-                <h3 className="text-lg font-semibold mb-2">Priority Access</h3>
-                <p className="text-gray-400">March 2025</p>
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 text-white">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg">
+                <div className="text-blue-400 text-3xl mb-4">🚀</div>
+                <h3 className="text-xl font-semibold mb-2">Priority Access</h3>
+                <p className="text-xl text-white font-medium">March 2025</p>
               </div>
-              <div className="bg-white/5 rounded-2xl p-8">
-                <Star className="h-8 w-8 text-blue-400 mb-4"/>
-                <h3 className="text-lg font-semibold mb-2">Exclusive Discount</h3>
-                <p className="text-gray-400">30% Off</p>
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg">
+                <div className="text-blue-400 text-3xl mb-4">🎁</div>
+                <h3 className="text-xl font-semibold mb-2">Exclusive Discount</h3>
+                <p className="text-xl text-white font-medium">30% Off</p>
               </div>
-              <div className="bg-white/5 rounded-2xl p-8">
-                <Star className="h-8 w-8 text-blue-400 mb-4"/>
-                <h3 className="text-lg font-semibold mb-2">Founder's Wall</h3>
-                <p className="text-gray-400">Special Recognition</p>
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg">
+                <div className="text-blue-400 text-3xl mb-4">🛡️</div>
+                <h3 className="text-xl font-semibold mb-2">Exclusive Badge</h3>
+                <p className="text-xl text-white font-medium">Founder's Wall</p>
               </div>
             </div>
           </div>
@@ -122,7 +208,7 @@ export default function Home() {
           <div className="mx-auto max-w-2xl lg:text-center mb-16">
             <p className="text-blue-400 text-sm font-semibold mb-4">Sharing My Journey</p>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Follow My Journey of building a<br/>
+              Follow My Journey of building a<br />
               <span className="text-gray-400">startup & travelling world</span>
             </h2>
           </div>
@@ -163,14 +249,14 @@ export default function Home() {
             <div className="bg-white/5 rounded-2xl p-8">
               <div className="flex gap-x-2 text-yellow-400 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current"/>
+                  <Star key={i} className="h-5 w-5 fill-current" />
                 ))}
               </div>
               <p className="text-xl font-semibold mb-8">
                 "This is truly incredible and have saved us countless hours!"
               </p>
               <div className="flex items-center gap-4">
-                <div className="h-12 w-12 rounded-full bg-gray-800"/>
+                <div className="h-12 w-12 rounded-full bg-gray-800" />
                 <div>
                   <p className="font-semibold">John Robert</p>
                   <p className="text-sm text-gray-400">SM Strategy</p>
@@ -180,14 +266,14 @@ export default function Home() {
             <div className="bg-white/5 rounded-2xl p-8">
               <div className="flex gap-x-2 text-yellow-400 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current"/>
+                  <Star key={i} className="h-5 w-5 fill-current" />
                 ))}
               </div>
               <p className="text-xl font-semibold mb-8">
                 "Superb product with the most user friendly interface!"
               </p>
               <div className="flex items-center gap-4">
-                <div className="h-12 w-12 rounded-full bg-gray-800"/>
+                <div className="h-12 w-12 rounded-full bg-gray-800" />
                 <div>
                   <p className="font-semibold">Maggie Hue</p>
                   <p className="text-sm text-gray-400">BS Growth CEO</p>
@@ -245,7 +331,7 @@ export default function Home() {
                 </p>
               </div>
               <Button variant="secondary" className="flex items-center gap-2">
-                Mail Us <ArrowRight className="h-4 w-4"/>
+                Mail Us <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
           </div>
