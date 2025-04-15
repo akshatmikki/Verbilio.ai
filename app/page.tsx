@@ -6,7 +6,6 @@ import CountdownTimer from '@/components/countdown-timer';
 import WaitlistForm from '@/components/waitlist-form';
 import { toast } from 'sonner';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import {
   Accordion,
   AccordionContent,
@@ -17,6 +16,7 @@ import { Boxes, Server, Bot, FileText } from "lucide-react";
 import { X, Instagram, Facebook } from 'lucide-react';
 import ContactForm from '@/components/contact-form';
 import PerkCard from '@/components/perk-card';
+import Image from 'next/image';
 
 const perks = [
   {
@@ -67,7 +67,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex items-center">
-              <span className="text-xl font-bold">Verbilio.ai</span>
+              <Image src="/verbilio.webp" alt="Logo" width={120} height={120} className="mr-2" />
             </div>
           </div>
         </div>
