@@ -73,3 +73,56 @@ CREATE POLICY "Authenticated users can submit contact messages"
   FOR INSERT
   TO authenticated
   WITH CHECK (true);
+
+-- 1. Create Table: blog_posts
+CREATE TABLE IF NOT EXISTS blog_posts (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  title text NOT NULL,
+  content text NOT NULL,
+  tags text[] DEFAULT '{}',             
+  image_url text,                       
+  created_at timestamptz DEFAULT now(),
+  updated_at timestamptz DEFAULT now(),
+  user_id uuid REFERENCES auth.users(id)
+);
+
+-- 2. Enable Row-Level Security
+ALTER TABLE blog_posts ENABLE ROW LEVEL SECURITY;
+
+-- 3. Policies
+
+-- Public can view all posts (customize with a "published" flag if needed)
+CREATE POLICY "Public can view posts"
+  ON blog_posts
+  FOR SELECT
+  TO anon
+  USING (true);
+
+-- Authenticated users can view their own posts
+CREATE POLICY "Users can view own posts"
+  ON blog_posts
+  FOR SELECT
+  TO authenticated
+  USING (auth.uid() = user_id);
+
+-- Authenticated users can insert their own posts
+CREATE POLICY "Users can insert posts"
+  ON blog_posts
+  FOR INSERT
+  TO authenticated
+  WITH CHECK (auth.uid() = user_id);
+
+-- Authenticated users can update their own posts
+CREATE POLICY "Users can update their posts"
+  ON blog_posts
+  FOR UPDATE
+  TO authenticated
+  USING (auth.uid() = user_id)
+  WITH CHECK (auth.uid() = user_id);
+
+-- Authenticated users can delete their own posts
+CREATE POLICY "Users can delete their posts"
+  ON blog_posts
+  FOR DELETE
+  TO authenticated
+  USING (auth.uid() = user_id);

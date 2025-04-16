@@ -18,6 +18,7 @@ import ContactForm from '@/components/contact-form';
 import PerkCard from '@/components/perk-card';
 import Image from 'next/image';
 import Link from 'next/link';
+//import BlogSection from '@/components/BlogSection';
 
 const perks = [
   {
@@ -62,14 +63,35 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen text-white">
+    <main className="min-h-screen bg-black text-white">
       {/* Navigation */}
       <nav className="fixed w-full z-50 bg-black/50 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
+
+            {/* Logo on the left */}
             <div className="flex items-center">
-              <Image src="/verbilio.webp" alt="Logo" width={120} height={120} className="mr-2" />
+              <Link href="/">
+                <Image
+                  src="/verbilio.webp"
+                  alt="Logo"
+                  width={120}
+                  height={120}
+                  className="mr-2 mt-2"
+                />
+              </Link>
             </div>
+
+            {/* Blog button on the right 
+            <div>
+              <Link
+                href="/blogs"
+                className="bg-black hover:bg-indigo-100 hover:text-black text-white text-xl font-medium px-4 py-2 rounded-md transition"
+              >
+                Blog
+              </Link>
+            </div>
+*/}
           </div>
         </div>
       </nav>
@@ -298,11 +320,14 @@ export default function Home() {
         </div>
       </div>
         */}
+
+      {/*<BlogSection />*}
+
       {/* FAQ Section */}
       <div className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <p className="text-blue-400 text-sm font-semibold mb-4">Vision Behind AtomAI</p>
+            <p className="text-blue-400 text-sm font-semibold mb-4">Vision Behind VerbilioAI</p>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Some Common FAQ's
             </h2>

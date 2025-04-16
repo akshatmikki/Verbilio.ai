@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Toaster } from '@/components/ui/sonner';
 import ClarityProvider from '@/components/ClarityProvider'; 
-import { BeamsBackground } from '@/components/ui/beams-background'; 
+//import { BeamsBackground } from '@/components/ui/beams-background'; 
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,9 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className + ' bg-black'}>
         <ClarityProvider /> 
-        <BeamsBackground intensity="strong">
+        {/*<BeamsBackground intensity="strong">*/}
           {children}
-        </BeamsBackground>
+        {/*</BeamsBackground>*/}
         <Toaster />
       </body>
     </html>

@@ -44,7 +44,7 @@ export default function ContactForm() {
                     Contact Us
                 </motion.h2>
             </div>
-            <div className="py-10 bg-black/50">
+            <div className="py-10 ">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <motion.div
                         className="mx-auto max-w-4xl bg-black rounded-2xl p-8 shadow-[0_0_30px_rgba(0,172,255,0.2)] border border-white/10"
