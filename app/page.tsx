@@ -13,10 +13,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Boxes, Server, Bot, FileText } from "lucide-react";
-import { X, Instagram, Facebook } from 'lucide-react';
+import { X, Linkedin, Facebook } from 'lucide-react';
 import ContactForm from '@/components/contact-form';
 import PerkCard from '@/components/perk-card';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const perks = [
   {
@@ -61,7 +62,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen text-white">
       {/* Navigation */}
       <nav className="fixed w-full z-50 bg-black/50 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -158,9 +159,15 @@ export default function Home() {
               <CountdownTimer />
               <WaitlistForm />
               <div className="flex justify-center gap-6 text-gray-400 text-lg mt-5">
-                <X className="cursor-pointer hover:text-white" />
-                <Instagram className="cursor-pointer hover:text-white" />
-                <Facebook className="cursor-pointer hover:text-white" />
+                <Link href="https://x.com/verbilio" target="_blank" rel="noopener noreferrer">
+                  <X className="cursor-pointer hover:text-white" />
+                </Link>
+                <Link href="https://www.linkedin.com/company/verbilio" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="cursor-pointer hover:text-white" />
+                </Link>
+                <Link href="https://www.facebook.com/profile.php?id=61574963685631" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="cursor-pointer hover:text-white" />
+                </Link>
               </div>
             </div>
 
@@ -169,7 +176,7 @@ export default function Home() {
       </main>
 
       {/* Benefits Section */}
-      <div className="min-h-screen bg-black text-white py-24">
+      <div className="min-h-screen text-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-32">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-blue-400 text-sm font-semibold mb-4 flex items-center justify-center">
