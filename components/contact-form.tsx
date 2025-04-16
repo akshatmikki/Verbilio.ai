@@ -32,10 +32,10 @@ export default function ContactForm() {
     };
 
     return (
-        <div>
-            <div className="mx-auto max-w-2xl lg:text-center">
+        <div className="px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
                 <motion.h2
-                    className="text-3xl font-bold tracking-tight sm:text-4xl"
+                    className="text-2xl sm:text-3xl font-bold tracking-tight"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
@@ -44,6 +44,7 @@ export default function ContactForm() {
                     Contact Us
                 </motion.h2>
             </div>
+
             <div className="py-10 ">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <motion.div
