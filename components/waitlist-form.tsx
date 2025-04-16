@@ -10,23 +10,31 @@ const WaitlistForm: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setSubmitting(true);
-
-        const { error } = await supabase.from('waitlist').insert([
-            {
-                email: email,
-            },
-        ]);
-
-        if (!error) {
+      
+        try {
+          const res = await fetch('/api/join-waitlist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+          });
+      
+          const data = await res.json();
+      
+          if (res.ok) {
             setSuccess(true);
             setEmail('');
-        } else {
-            console.error('Error:', error);
+          } else {
+            console.error('API error:', data.error);
             alert('There was an error joining the waitlist.');
+          }
+        } catch (err) {
+          console.error('Network error:', err);
+          alert('Something went wrong.');
         }
-
+      
         setSubmitting(false);
-    };
+      };
+      
 
     return (
         <div className="text-white text-center mt-8 space-y-6">
