@@ -170,17 +170,21 @@ export default function Home() {
             </div>
 
             {/* Waitlist Form */}
-            <div className="rounded-2xl p-8 shadow-[0_0_30px_rgba(128,128,128,0.4)]">
-              <p className="text-sm text-purple-400 text-center uppercase mb-2">Launches: June 15, 2025</p>
-              <h1 className="text-2xl md:text-4xl font-bold text-center mb-4 text-white">
+            <div className="w-full max-w-xl mx-auto rounded-2xl p-4 sm:p-6 md:p-8 shadow-[0_0_30px_rgba(128,128,128,0.4)]">
+              <p className="text-xs sm:text-sm text-purple-400 text-center uppercase mb-2">Launches: June 15, 2025</p>
+
+              <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 text-white">
                 Join the <span className="text-blue-400">waitlist</span>
               </h1>
-              <p className="text-center text-gray-400 max-w-md">
+
+              <p className="text-center text-gray-400 text-sm sm:text-base max-w-md mx-auto mb-4">
                 Obtain early access to our program and remain informed about release announcements.
               </p>
+
               <CountdownTimer />
               <WaitlistForm />
-              <div className="flex justify-center gap-6 text-gray-400 text-lg mt-5">
+
+              <div className="flex justify-center gap-4 sm:gap-6 text-gray-400 text-lg mt-5">
                 <Link href="https://x.com/verbilio" target="_blank" rel="noopener noreferrer">
                   <X className="cursor-pointer hover:text-white" />
                 </Link>
@@ -192,7 +196,6 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-
           </div>
         </div>
       </main>
