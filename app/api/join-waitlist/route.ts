@@ -5,7 +5,7 @@ export async function POST(req: Request) {
   try {
     const { email } = await req.json();
 
-    const { error } = await supabase.from('waitlist_entries').insert([{ email }]);
+    const { error } = await supabase.from('waitlist').insert([{ email }]);
 
     if (error) {
       console.error('Supabase error:', error);

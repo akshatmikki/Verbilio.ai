@@ -15,32 +15,26 @@
       - Users can insert their own entries
 */
 
-CREATE TABLE IF NOT EXISTS waitlist_entries (
+CREATE TABLE IF NOT EXISTS waitlist (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   email text UNIQUE NOT NULL,
-  created_at timestamptz DEFAULT now(),
-  user_id uuid REFERENCES auth.users(id)
+  name text,
+  joined_at timestamptz DEFAULT now()
 );
 
-ALTER TABLE waitlist_entries ENABLE ROW LEVEL SECURITY;
+ALTER TABLE waitlist ENABLE ROW LEVEL SECURITY;
 
-CREATE POLICY "Users can read own entries"
-  ON waitlist_entries
+-- Allow anyone to insert into waitlist
+CREATE POLICY "Anyone can join waitlist" ON waitlist
+  FOR INSERT
+  TO public
+  WITH CHECK (true);
+
+-- Only allow users to read their own entries
+CREATE POLICY "Users can read own entries" ON waitlist
   FOR SELECT
-  TO authenticated
-  USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can insert own entries"
-  ON waitlist_entries
-  FOR INSERT
-  TO authenticated
-  WITH CHECK (auth.uid() = user_id);
-
-CREATE POLICY "Public can insert entries"
-  ON waitlist_entries
-  FOR INSERT
-  TO anon
-  WITH CHECK (user_id IS NULL);
+  TO public
+  USING (email = current_setting('request.jwt.claims')::json->>'email');
 
   -- ====================================================
 -- Contact Form - Schema Setup
