@@ -36,12 +36,19 @@ CREATE POLICY "Users can read own entries" ON waitlist
   TO public
   USING (email = current_setting('request.jwt.claims')::json->>'email');
 
+-- Replace or add this:
+CREATE POLICY "Public can read waitlist entries" ON waitlist
+  FOR SELECT
+  TO public
+  USING (true);
+
+
   -- ====================================================
 -- Contact Form - Schema Setup
 -- ====================================================
 
 -- 1. Create Table: contact_messages
-CREATE TABLE IF NOT EXISTS contact_messages (
+CREATE TABLE IF NOT EXISTS contactus (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   name text NOT NULL,
   email text NOT NULL,
@@ -50,20 +57,20 @@ CREATE TABLE IF NOT EXISTS contact_messages (
 );
 
 -- 2. Enable Row-Level Security
-ALTER TABLE contact_messages ENABLE ROW LEVEL SECURITY;
+ALTER TABLE contactus ENABLE ROW LEVEL SECURITY;
 
 -- 3. Policies
 
 -- Allow anonymous users to submit a contact message
 CREATE POLICY "Public can submit contact messages"
-  ON contact_messages
+  ON contactus
   FOR INSERT
   TO anon
   WITH CHECK (true);
 
 -- (Optional) Allow authenticated users to insert messages as well
 CREATE POLICY "Authenticated users can submit contact messages"
-  ON contact_messages
+  ON contactus
   FOR INSERT
   TO authenticated
   WITH CHECK (true);

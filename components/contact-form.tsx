@@ -18,18 +18,30 @@ export default function ContactForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setSubmitting(true);
-
-        const { error } = await supabase.from('contacts').insert([form]);
-
-        if (!error) {
-            setSuccess(true);
-            setForm({ name: '', email: '', message: '' });
-        } else {
-            console.error(error);
+    
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(form),
+            });
+    
+            const data = await res.json();
+    
+            if (res.ok) {
+                setSuccess(true);
+                setForm({ name: '', email: '', message: '' });
+            } else {
+                console.error('API error:', data.error);
+                alert('There was an error sending your message.');
+            }
+        } catch (err) {
+            console.error('Network error:', err);
+            alert('Something went wrong.');
         }
-
+    
         setSubmitting(false);
-    };
+    };    
 
     return (
         <div className="px-4 sm:px-6 lg:px-8">

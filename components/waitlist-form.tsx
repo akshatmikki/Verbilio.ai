@@ -9,31 +9,34 @@ const WaitlistForm: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setSubmitting(true);
-      
+        setSuccess(false); // Reset on each submit
+    
         try {
-          const res = await fetch('/api/join-waitlist', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email }),
-          });
-      
-          const data = await res.json();
-      
-          if (res.ok) {
-            setSuccess(true);
-            setEmail('');
-          } else {
-            console.error('API error:', data.error);
-            alert('There was an error joining the waitlist.');
-          }
+            const res = await fetch('/api/join-waitlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            });
+    
+            const data = await res.json();
+    
+            if (res.ok) {
+                setSuccess(true);
+                setEmail('');
+            } else if (res.status === 409 && data.message === 'User already registered') {
+                alert('You are already on the waitlist!');
+            } else {
+                console.error('API error:', data.error);
+                alert('User already registered or there was an error.');
+            }
         } catch (err) {
-          console.error('Network error:', err);
-          alert('Something went wrong.');
+            console.error('Network error:', err);
+            alert('Something went wrong.');
         }
-      
+    
         setSubmitting(false);
-      };
-      
+    };
+          
 
     return (
         <div className="text-white text-center mt-8 space-y-6">
