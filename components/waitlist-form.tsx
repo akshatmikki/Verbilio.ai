@@ -23,11 +23,11 @@ const WaitlistForm: React.FC = () => {
             if (res.ok) {
                 setSuccess(true);
                 setEmail('');
-            } else if (res.status === 409 && data.message === 'User already registered') {
+            } else if (res.status === 409 || data.message === 'User already registered') {
                 alert('You are already on the waitlist!');
             } else {
                 console.error('API error:', data.error);
-                alert('User already registered or there was an error.');
+                alert('You are already on the waitlist!');
             }
         } catch (err) {
             console.error('Network error:', err);
