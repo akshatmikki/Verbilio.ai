@@ -104,7 +104,7 @@ export default function Home() {
               Join the Future of Automation
             </h1>
             <p className="text-xl text-white max-w-3xl mx-auto">
-              Be among the first to experience our revolutionary platform for AI-powered workflows, marketplace for MCP servers, AI agents, and workflow templates.
+              Be among the first to experience our revolutionary platform for AI-powered Workflows, Marketplace for MCP Servers and AI agents.
             </p>
           </div>
 
@@ -135,7 +135,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">MCP Servers Marketplace</h3>
                   <p className="text-white text-lg">
-                    Access a curated collection of Modular Compute Platform servers.
+                    Access a curated collection of Modal Context Protocol servers.
                   </p>
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Template Marketplace</h3>
                   <p className="text-white text-lg">
-                    Jump-start your automation with pre-built workflow templates.
+                    Jump-start your automation with pre-built AI Agents, Workflows and MCP Servers.
                   </p>
                 </div>
               </div>
@@ -343,7 +343,7 @@ export default function Home() {
               {[
                 {
                   question: 'What is this waitlist for?',
-                  answer: 'This waitlist gives you early access...',
+                  answer: 'This waitlist gives you early access to our upcoming AI-powered automation and workflow platform — designed to help you build, run, and monetize intelligent apps, agents, and workflows using pre-built templates or custom logic. You will be the first to explore our Workflow Templates Marketplace and cutting-edge features that empower creators, teams, and businesses to automate anything.',
                 },
                 {
                   question: 'What benefits will I get if I join this waitlist?',
@@ -406,7 +406,7 @@ export default function Home() {
       <footer className="py-12 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            <p className="text-gray-400">© 2025 — Copyright</p>
+            <p className="text-gray-400">© 2025 Verbilio</p>
           </div>
         </div>
       </footer>
