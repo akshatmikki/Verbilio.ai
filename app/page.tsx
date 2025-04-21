@@ -97,14 +97,14 @@ export default function Home() {
       </nav>
       {/* Hero Section */}
       <main>
-        <div className="max-w-7xl mx-auto px-4 pt-[150px]">
+        <div className="relative bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden w-8xl mx-auto px-4 pt-[150px]">
           {/* Hero Section */}
           <div className="text-center mb-20">
             <h1 className="text-6xl font-bold tracking-tight text-white mb-6">
               Join the Future of Automation
             </h1>
             <p className="text-xl text-white max-w-3xl mx-auto">
-              Be among the first to experience our revolutionary platform for AI-powered Workflows, Marketplace for MCP Servers and AI agents.
+            Be among the first to experience our revolutionary platform for AI-powered Workflows, Marketplace for MCP Servers and AI agents.
             </p>
           </div>
 
@@ -114,9 +114,14 @@ export default function Home() {
             <div className="space-y-12">
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                  >
                     <Boxes className="h-6 w-6 text-indigo-600" />
-                  </div>
+                  </motion.div>
+
+
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">AI-Powered Workflows</h3>
@@ -128,9 +133,13 @@ export default function Home() {
 
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                  >
                     <Server className="h-6 w-6 text-indigo-600" />
-                  </div>
+                  </motion.div>
+
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">MCP Servers Marketplace</h3>
@@ -142,9 +151,13 @@ export default function Home() {
 
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                  >
                     <Bot className="h-6 w-6 text-indigo-600" />
-                  </div>
+                  </motion.div>
+
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">AI Agents</h3>
@@ -156,9 +169,12 @@ export default function Home() {
 
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                  >
                     <FileText className="h-6 w-6 text-indigo-600" />
-                  </div>
+                  </motion.div>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Template Marketplace</h3>
@@ -170,7 +186,7 @@ export default function Home() {
             </div>
 
             {/* Waitlist Form */}
-            <div className="w-full max-w-xl mx-auto rounded-2xl p-4 sm:p-6 md:p-8 shadow-[0_0_30px_rgba(128,128,128,0.4)]">
+            <div className="w-full max-w-xl mx-auto rounded-2xl p-4 sm:p-6 md:p-8 bg-black shadow-[0_0_30px_rgba(128,128,128,0.4)]">
               <p className="text-xs sm:text-sm text-purple-400 text-center uppercase mb-2">Launches: June 15, 2025</p>
 
               <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 text-white">
@@ -183,22 +199,23 @@ export default function Home() {
 
               <CountdownTimer />
               <WaitlistForm />
-
-              <div className="flex justify-center gap-4 sm:gap-6 text-gray-400 text-lg mt-5">
-                <Link href="https://x.com/verbilio" target="_blank" rel="noopener noreferrer">
-                  <X className="cursor-pointer hover:text-white" />
-                </Link>
-                <Link href="https://www.linkedin.com/company/verbilio" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="cursor-pointer hover:text-white" />
-                </Link>
-                <Link href="https://www.facebook.com/profile.php?id=61574963685631" target="_blank" rel="noopener noreferrer">
-                  <Facebook className="cursor-pointer hover:text-white" />
-                </Link>
-              </div>
             </div>
           </div>
         </div>
       </main>
+      <div className="absolute top-100 left-0 w-full overflow-hidden leading-none rotate-180">
+    <svg
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+      className="relative block w-full h-20 text-black"
+    >
+      <path
+        d="M0,0V46.29c47.24,22,104.35,29.27,158,17C230.25,50.47,284,14.79,339,6.43c56.12-8.56,112,12.19,166,35.71C584.24,69.79,639,89.73,693,85.88c55.67-3.91,112-30.08,167-35.73C915.72,44.69,972,58.48,1026,66.75c61.07,9.38,117.64,1.88,174-15.54V0Z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  </div>
+
 
       {/* Benefits Section */}
       <div className="min-h-screen text-white py-24">
@@ -330,13 +347,10 @@ export default function Home() {
       <div className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <p className="text-blue-400 text-sm font-semibold mb-4">Vision Behind VerbilioAI</p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Some Common FAQ's
-            </h2>
-            <p className="mt-4 text-gray-400">
-              Here are some common questions that you might have about our product and how it works.
-            </p>
+            <p className="text-blue-400 text-sm font-semibold mb-4">Need Help?</p>
+            <h3 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            We’ve Got Answers
+            </h3>
           </div>
           <div className="mx-auto max-w-3xl">
             <Accordion type="single" collapsible className="space-y-4">
@@ -405,8 +419,19 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            <p className="text-gray-400">© 2025 Verbilio</p>
+          <div className="flex justify-start mt-3">
+            <p className="text-gray-400">© Copyright Verbilio</p>
+          </div>
+          <div className="flex justify-end gap-4 sm:gap-6 text-gray-400 ">
+            <Link href="https://x.com/verbilio" target="_blank" rel="noopener noreferrer">
+              <X className="cursor-pointer hover:text-white" />
+            </Link>
+            <Link href="https://www.linkedin.com/company/verbilio" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="cursor-pointer hover:text-white" />
+            </Link>
+            <Link href="https://www.facebook.com/profile.php?id=61574963685631" target="_blank" rel="noopener noreferrer">
+              <Facebook className="cursor-pointer hover:text-white" />
+            </Link>
           </div>
         </div>
       </footer>
