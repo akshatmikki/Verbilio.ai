@@ -97,125 +97,116 @@ export default function Home() {
       </nav>
       {/* Hero Section */}
       <main>
-        <div className="relative bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden w-8xl mx-auto px-4 pt-[150px]">
-          {/* Hero Section */}
-          <div className="text-center mb-20">
-            <h1 className="text-6xl font-bold tracking-tight text-white mb-6">
-              Join the Future of Automation
-            </h1>
-            <p className="text-xl text-white max-w-3xl mx-auto">
-            Be among the first to experience our revolutionary platform for AI-powered Workflows, Marketplace for MCP Servers and AI agents.
-            </p>
-          </div>
-
-          {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-[1fr,420px] gap-16 items-start">
-            {/* Features List */}
-            <div className="space-y-12">
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
-                  >
-                    <Boxes className="h-6 w-6 text-indigo-600" />
-                  </motion.div>
-
-
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">AI-Powered Workflows</h3>
-                  <p className="text-white text-lg">
-                    Automate complex processes with intelligent workflows that adapt and learn.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
-                  >
-                    <Server className="h-6 w-6 text-indigo-600" />
-                  </motion.div>
-
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">MCP Servers Marketplace</h3>
-                  <p className="text-white text-lg">
-                    Access a curated collection of Modal Context Protocol servers.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
-                  >
-                    <Bot className="h-6 w-6 text-indigo-600" />
-                  </motion.div>
-
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">AI Agents</h3>
-                  <p className="text-white text-lg">
-                    Deploy intelligent agents that handle tasks autonomously.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
-                  >
-                    <FileText className="h-6 w-6 text-indigo-600" />
-                  </motion.div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Template Marketplace</h3>
-                  <p className="text-white text-lg">
-                    Jump-start your automation with pre-built AI Agents, Workflows and MCP Servers.
-                  </p>
-                </div>
-              </div>
+        <div className="relative bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden min-h-screen py-[150px]">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            {/* Hero Section */}
+            <div className="text-center mb-20">
+              <h1 className="text-6xl font-bold tracking-tight text-white mb-6">
+                Join the Future of Automation
+              </h1>
+              <p className="text-xl text-white max-w-3xl mx-auto">
+                Be among the first to experience our revolutionary platform for AI-powered Workflows, Marketplace for MCP Servers and AI agents.
+              </p>
             </div>
 
-            {/* Waitlist Form */}
-            <div className="w-full max-w-xl mx-auto rounded-2xl p-4 sm:p-6 md:p-8 bg-black shadow-[0_0_30px_rgba(128,128,128,0.4)]">
-              <p className="text-xs sm:text-sm text-purple-400 text-center uppercase mb-2">Launches: June 15, 2025</p>
+            {/* Main Content Grid */}
+            <div className="grid lg:grid-cols-[1fr,420px] gap-16 items-start">
+              {/* Features List */}
+              <div className="space-y-12">
+                {/* Feature 1 */}
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                    >
+                      <Boxes className="h-6 w-6 text-indigo-600" />
+                    </motion.div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">AI-Powered Workflows</h3>
+                    <p className="text-white text-lg">
+                      Automate complex processes with intelligent workflows that adapt and learn.
+                    </p>
+                  </div>
+                </div>
 
-              <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 text-white">
-                Join the <span className="text-blue-400">waitlist</span>
-              </h1>
+                {/* Feature 2 */}
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                    >
+                      <Server className="h-6 w-6 text-indigo-600" />
+                    </motion.div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">MCP Servers Marketplace</h3>
+                    <p className="text-white text-lg">
+                      Access a curated collection of Modal Context Protocol servers.
+                    </p>
+                  </div>
+                </div>
 
-              <p className="text-center text-gray-400 text-sm sm:text-base max-w-md mx-auto mb-4">
-                Obtain early access to our program and remain informed about release announcements.
-              </p>
+                {/* Feature 3 */}
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                    >
+                      <Bot className="h-6 w-6 text-indigo-600" />
+                    </motion.div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">AI Agents</h3>
+                    <p className="text-white text-lg">
+                      Deploy intelligent agents that handle tasks autonomously.
+                    </p>
+                  </div>
+                </div>
 
-              <CountdownTimer />
-              <WaitlistForm />
+                {/* Feature 4 */}
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                    >
+                      <FileText className="h-6 w-6 text-indigo-600" />
+                    </motion.div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Template Marketplace</h3>
+                    <p className="text-white text-lg">
+                      Jump-start your automation with pre-built AI Agents, Workflows and MCP Servers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Waitlist Form */}
+              <div className="w-full max-w-xl mx-auto rounded-2xl p-4 sm:p-6 md:p-8 bg-black shadow-[0_0_30px_rgba(128,128,128,0.4)]">
+                <p className="text-xs sm:text-sm text-purple-400 text-center uppercase mb-2">
+                  Launches: June 15, 2025
+                </p>
+
+                <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 text-white">
+                  Join the <span className="text-blue-400">waitlist</span>
+                </h1>
+
+                <p className="text-center text-gray-400 text-sm sm:text-base max-w-md mx-auto mb-4">
+                  Obtain early access to our program and remain informed about release announcements.
+                </p>
+
+                <CountdownTimer />
+                <WaitlistForm />
+              </div>
             </div>
           </div>
         </div>
       </main>
-      <div className="absolute top-100 left-0 w-full overflow-hidden leading-none rotate-180">
-    <svg
-      viewBox="0 0 1200 120"
-      preserveAspectRatio="none"
-      className="relative block w-full h-20 text-black"
-    >
-      <path
-        d="M0,0V46.29c47.24,22,104.35,29.27,158,17C230.25,50.47,284,14.79,339,6.43c56.12-8.56,112,12.19,166,35.71C584.24,69.79,639,89.73,693,85.88c55.67-3.91,112-30.08,167-35.73C915.72,44.69,972,58.48,1026,66.75c61.07,9.38,117.64,1.88,174-15.54V0Z"
-        fill="currentColor"
-      ></path>
-    </svg>
-  </div>
-
 
       {/* Benefits Section */}
       <div className="min-h-screen text-white py-24">
@@ -349,7 +340,7 @@ export default function Home() {
           <div className="mx-auto max-w-2xl lg:text-center mb-16">
             <p className="text-blue-400 text-sm font-semibold mb-4">Need Help?</p>
             <h3 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            We’ve Got Answers
+              We’ve Got Answers
             </h3>
           </div>
           <div className="mx-auto max-w-3xl">
