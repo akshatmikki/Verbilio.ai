@@ -97,103 +97,111 @@ export default function Home() {
       </nav>
       {/* Hero Section */}
       <main>
-        <div className="max-w-7xl mx-auto px-4 pt-[150px]">
-          {/* Hero Section */}
-          <div className="text-center mb-20">
-            <h1 className="text-6xl font-bold tracking-tight text-white mb-6">
-              Join the Future of Automation
-            </h1>
-            <p className="text-xl text-white max-w-3xl mx-auto">
-              Be among the first to experience our revolutionary platform for AI-powered workflows, marketplace for MCP servers, AI agents, and workflow templates.
-            </p>
-          </div>
-
-          {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-[1fr,420px] gap-16 items-start">
-            {/* Features List */}
-            <div className="space-y-12">
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    <Boxes className="h-6 w-6 text-indigo-600" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">AI-Powered Workflows</h3>
-                  <p className="text-white text-lg">
-                    Automate complex processes with intelligent workflows that adapt and learn.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    <Server className="h-6 w-6 text-indigo-600" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">MCP Servers Marketplace</h3>
-                  <p className="text-white text-lg">
-                    Access a curated collection of Modular Compute Platform servers.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    <Bot className="h-6 w-6 text-indigo-600" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">AI Agents</h3>
-                  <p className="text-white text-lg">
-                    Deploy intelligent agents that handle tasks autonomously.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    <FileText className="h-6 w-6 text-indigo-600" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Template Marketplace</h3>
-                  <p className="text-white text-lg">
-                    Jump-start your automation with pre-built workflow templates.
-                  </p>
-                </div>
-              </div>
+        <div className="relative bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden min-h-screen py-[150px]">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            {/* Hero Section */}
+            <div className="text-center mb-20">
+              <h1 className="text-6xl font-bold tracking-tight text-white mb-6">
+                Join the Future of Automation
+              </h1>
+              <p className="text-xl text-white max-w-3xl mx-auto">
+                Be among the first to experience our revolutionary platform for AI-powered Workflows, Marketplace for MCP Servers and AI agents.
+              </p>
             </div>
 
-            {/* Waitlist Form */}
-            <div className="w-full max-w-xl mx-auto rounded-2xl p-4 sm:p-6 md:p-8 shadow-[0_0_30px_rgba(128,128,128,0.4)]">
-              <p className="text-xs sm:text-sm text-purple-400 text-center uppercase mb-2">Launches: June 15, 2025</p>
+            {/* Main Content Grid */}
+            <div className="grid lg:grid-cols-[1fr,420px] gap-16 items-start">
+              {/* Features List */}
+              <div className="space-y-12">
+                {/* Feature 1 */}
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                    >
+                      <Boxes className="h-6 w-6 text-indigo-600" />
+                    </motion.div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">AI-Powered Workflows</h3>
+                    <p className="text-white text-lg">
+                      Automate complex processes with intelligent workflows that adapt and learn.
+                    </p>
+                  </div>
+                </div>
 
-              <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 text-white">
-                Join the <span className="text-blue-400">waitlist</span>
-              </h1>
+                {/* Feature 2 */}
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                    >
+                      <Server className="h-6 w-6 text-indigo-600" />
+                    </motion.div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">MCP Servers Marketplace</h3>
+                    <p className="text-white text-lg">
+                      Access a curated collection of Modal Context Protocol servers.
+                    </p>
+                  </div>
+                </div>
 
-              <p className="text-center text-gray-400 text-sm sm:text-base max-w-md mx-auto mb-4">
-                Obtain early access to our program and remain informed about release announcements.
-              </p>
+                {/* Feature 3 */}
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                    >
+                      <Bot className="h-6 w-6 text-indigo-600" />
+                    </motion.div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">AI Agents</h3>
+                    <p className="text-white text-lg">
+                      Deploy intelligent agents that handle tasks autonomously.
+                    </p>
+                  </div>
+                </div>
 
-              <CountdownTimer />
-              <WaitlistForm />
+                {/* Feature 4 */}
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-12 h-12 p-3 flex items-center justify-center rounded-xl bg-[#8A8DFF]/10 text-[#A8A9FF] shadow-lg"
+                    >
+                      <FileText className="h-6 w-6 text-indigo-600" />
+                    </motion.div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Template Marketplace</h3>
+                    <p className="text-white text-lg">
+                      Jump-start your automation with pre-built AI Agents, Workflows and MCP Servers.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-              <div className="flex justify-center gap-4 sm:gap-6 text-gray-400 text-lg mt-5">
-                <Link href="https://x.com/verbilio" target="_blank" rel="noopener noreferrer">
-                  <X className="cursor-pointer hover:text-white" />
-                </Link>
-                <Link href="https://www.linkedin.com/company/verbilio" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="cursor-pointer hover:text-white" />
-                </Link>
-                <Link href="https://www.facebook.com/profile.php?id=61574963685631" target="_blank" rel="noopener noreferrer">
-                  <Facebook className="cursor-pointer hover:text-white" />
-                </Link>
+              {/* Waitlist Form */}
+              <div className="w-full max-w-xl mx-auto rounded-2xl p-4 sm:p-6 md:p-8 bg-black shadow-[0_0_30px_rgba(128,128,128,0.4)]">
+                <p className="text-xs sm:text-sm text-purple-400 text-center uppercase mb-2">
+                  Launches: June 15, 2025
+                </p>
+
+                <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 text-white">
+                  Join the <span className="text-blue-400">waitlist</span>
+                </h1>
+
+                <p className="text-center text-gray-400 text-sm sm:text-base max-w-md mx-auto mb-4">
+                  Obtain early access to our program and remain informed about release announcements.
+                </p>
+
+                <CountdownTimer />
+                <WaitlistForm />
               </div>
             </div>
           </div>
@@ -330,20 +338,17 @@ export default function Home() {
       <div className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <p className="text-blue-400 text-sm font-semibold mb-4">Vision Behind VerbilioAI</p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Some Common FAQ's
-            </h2>
-            <p className="mt-4 text-gray-400">
-              Here are some common questions that you might have about our product and how it works.
-            </p>
+            <p className="text-blue-400 text-sm font-semibold mb-4">Need Help?</p>
+            <h3 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              We’ve Got Answers
+            </h3>
           </div>
           <div className="mx-auto max-w-3xl">
             <Accordion type="single" collapsible className="space-y-4">
               {[
                 {
                   question: 'What is this waitlist for?',
-                  answer: 'This waitlist gives you early access...',
+                  answer: 'This waitlist gives you early access to our upcoming AI-powered automation and workflow platform — designed to help you build, run, and monetize intelligent apps, agents, and workflows using pre-built templates or custom logic. You will be the first to explore our Workflow Templates Marketplace and cutting-edge features that empower creators, teams, and businesses to automate anything.',
                 },
                 {
                   question: 'What benefits will I get if I join this waitlist?',
@@ -405,8 +410,19 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            <p className="text-gray-400">© 2025 — Copyright</p>
+          <div className="flex justify-start mt-3">
+            <p className="text-gray-400">© Copyright Verbilio</p>
+          </div>
+          <div className="flex justify-end gap-4 sm:gap-6 text-gray-400 ">
+            <Link href="https://x.com/verbilio" target="_blank" rel="noopener noreferrer">
+              <X className="cursor-pointer hover:text-white" />
+            </Link>
+            <Link href="https://www.linkedin.com/company/verbilio" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="cursor-pointer hover:text-white" />
+            </Link>
+            <Link href="https://www.facebook.com/profile.php?id=61574963685631" target="_blank" rel="noopener noreferrer">
+              <Facebook className="cursor-pointer hover:text-white" />
+            </Link>
           </div>
         </div>
       </footer>

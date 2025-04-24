@@ -35,11 +35,14 @@ const CountdownTimer: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex gap-4 justify-center text-white text-center mt-4">
+    <div className="flex gap-6 justify-center text-white text-center mt-8">
       {(['days', 'hours', 'minutes', 'seconds'] as const).map((unit) => (
-        <div key={unit}>
-          <div className="text-3xl font-bold">{timeLeft[unit]}</div>
-          <div className="uppercase text-sm">{unit}</div>
+        <div
+          key={unit}
+          className="bg-[#111] px-3 py-1 rounded-xl shadow-md shadow-blue-500/20 backdrop-blur-sm border border-blue-500/10"
+        >
+          <div className="text-3xl font-extrabold text-blue-400">{timeLeft[unit]}</div>
+          <div className="uppercase text-xs tracking-widest text-gray-300 mt-1">{unit}</div>
         </div>
       ))}
     </div>
